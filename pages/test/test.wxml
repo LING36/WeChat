@@ -1,0 +1,98 @@
+<view>test页{{name}}</view>
+<view>密码是:{{pass}}</view>
+<button bindtap="toIndex">跳转到首页</button>
+
+<!--页面跳转方法2-->
+<navigator url="../index/index" hover-class="active">跳转到首页</navigator>
+<button bindtap="say">say Hello</button>
+<view id="item-{{id}}">内容</view>
+<view bindtap="show">显示隐藏</view>
+
+<!--wx:if条件渲染 接收布尔值   类似ng-if  可以控制显示与隐藏-->
+<view wx:if="{{bol}}">显示条件渲染</view>
+<view wx:if="{{id==1}}">第一条</view>
+<view wx:if="{{id>4}}">大于第一条的</view>
+<view wx:else="{{id>7}}">我是7</view>
+
+<!--block只是一个包装元素，不会在页面上渲染，换成div也可以-->
+<block wx:if="{{false}}">
+  <view>第一个view</view>
+  <view>第二个view</view>
+</block>
+
+<!--除了wx:if可以控制显示与隐藏还有hidden也可以 hidden只能作用于text文本中，在view没有效果(不生效) -->
+<text hidden="{{true}}">我是一段文本</text>
+
+<!--三目运算 -->
+<view>{{bol?"正":"反"}}</view>
+
+<!--一般运算加减乘除，基础数学运算-->
+<view>{{3+8}}</view>
+<view>{{3+id}}</view>
+
+<!--字符串连接-->
+<view>{{"Hello" +name}}</view>
+
+<!--循环输出arr数组-->
+<view wx:for="{{arr}}">项目：{{item}}</view>
+
+<!--组合-->
+<view wx:for="{{[id,5,4,3,2,1]}}">{{item}}</view>
+
+<!--自定义模板,模板光定义不使用是不会渲染到页面上的,独立作用域-->
+<template name="object">
+  <view>第一个对象：{{a}}</view>
+  <view>第二个对象：{{b}}</view>
+  <view>{{name}}</view>
+
+  <!--，拿不到test.js里的name-->
+</template>
+
+<!--使用模板  is里放要调用的哪个模板的名字-->
+<template is="object" data="{{a:1,b:2,tempname:name}}"></template>
+<template is="object" data="{{...obj1}}"></template>
+
+<!--for详解-->
+<view wx:for="{{arr}}">
+  下标是{{index}}:当前项是{{item}}
+</view>
+<view wx:for="{{arr}}" wx:for-index="ind" wx:for-item="itemname">
+  下标是{{ind}}:当前项是{{itemname}}
+</view>
+
+<!--九九乘法表-->
+
+<!--行-->
+<view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="i">
+  <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="j" style="display:inline-block;width:50px;">
+    <view wx:if="{{j<=i}}">
+      {{i}}*{{j}}={{i*j}}
+    </view>
+  </view>
+</view>
+
+<!--事件  bindtap：一般绑定事件
+         catchtap：阻止冒泡  点击事件，鼠标点击松开时才触发                    catchtouchstart:鼠标点击的时候就触发了 -->
+
+<!--冒泡  执行顺序从里到外   将bindtap改为catchtap就会阻止冒泡不往上传递事件了-->
+<view id="outter" bindtap="outter">
+  outter view
+  <view id="middle" catchtap="middle">
+    middle view
+    <view id="inner" catchtouchstart="innerTap">
+      inner view
+      <view bindtouchmove="newTap">
+        nei view
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--引入import  import可以在该文件中使用目标文件定义的template-->
+<import src="item.wxml"/>
+<import src="c.wxml"/><!--不可少-->
+<template is="item" data="{{name:'123'}}"/><!--可以渲染出来-->
+<template is="c" data="{{pass:'c'}}"/><!--可以渲染出来-->、
+
+<!--引入include  include可以将目标文件除了<template/>的整个代码引入，相当于是拷贝到include位置-->
+<include src="item.wxml"/>

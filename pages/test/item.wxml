@@ -1,0 +1,7 @@
+<!--引用-->
+<view>我是item.wiew</view><!--非模板标签会被忽略-->
+<!--引入c.wxml-->
+<import src="c.wxml"/>
+<template name="item">
+  <text>我是item.wxml里的{{name}}</text>
+</template>
