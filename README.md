@@ -1,2 +1,2 @@
-:cat:微信小程序cat:
+:cat:微信小程序:cat:
 :rabbit：:rabbit：:rabbit：
