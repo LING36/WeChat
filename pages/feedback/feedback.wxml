@@ -1,0 +1,40 @@
+
+<!--操作反馈-->
+<button bindtap="showAction">显示操作菜单</button>
+<button bindtap="showModal">显示模态弹窗</button>
+<button bindtap="showToast">显示消息提示框</button>
+
+<!--返回上一层-->
+<button bindtap="navigateBack">返回上一层</button>
+
+<!--媒体组件-->
+
+<!--音频-->
+<audio src="{{src}}" poster="{{poster}}" name="{{name}}" author="{{author}}" controls id="AudioId"></audio>
+<button bindtap="audioPlay">播放</button>
+<button bindtap="audioPause">暂停</button>
+<button bindtap="audio50">设置当前的播放时间为50秒</button>
+
+<!--图片-->
+<view class="section_title">原图</view>
+<image src="{{imageSrc}}"></image>
+
+<!--<view class="section_title">
+    scaleToFill 	不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素
+</view>
+<image src="{{imageSrc}}" style="width:400rpx;height:400rpx;background-color:#333;"></image>
+<view class="section_title">
+   aspectFit
+保持纵横比缩放图片，使图片的长边能完全显示出来 image 元素
+</view>
+<image src="{{imageSrc}}" style="width:400rpx;height:400rpx;background-color:#333;"></image>-->
+
+<!--controls 	Boolean 	true 	是否显示默认播放控件（播放/暂停按钮、播放进度、时间）
+danmu-btn 	Boolean 	false 	是否显示弹幕按钮，只在初始化时有效，不能动态变更
+-->
+<view wx:for="{{imgArray}}">
+  <view>{{item.text}}</view>
+  <image src="{{imageSrc}}" style="width:400rpx;height:400rpx;background-color:#333;"></image>
+</view>
+<video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+controls danmu-btn enable-danmu danmu-list="{{danmuList}}"></video>
