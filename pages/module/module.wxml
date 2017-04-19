@@ -1,0 +1,58 @@
+
+<!--组件-->
+<view class="flex-wrap">
+  <view class="a">a</view>
+  <view class="b">b</view>
+  <view class="c">c</view>
+</view>
+<view class="flex-wrap f2">
+  <view class="a a1">1</view>
+  <view class="b b2">2</view>
+  <view class="c b3">3</view>
+</view>
+
+<!--组件-->
+<!--<view class="wrap">
+  <view class="a">a</view>
+  <view class="b">b</view>
+  <view class="c">c</view>
+</view>-->
+
+<!--scroll-view   scroll-y="true":纵向滚动   scroll-x="true":横向滚动-->
+<!--bindscrolltoupper 滚动到顶部或左边触发事件
+bindscrolltolower：滚动到底部触发
+upper-threshold:设置顶部距离不需要单位
+lower-threshold:设置底部距离
+scroll-top/left:设置滚动条距离
+-->
+<scroll-view class="wrap" scroll-y="true"  bindscrolltoupper="EventHandle" bindscrolltolower="scrolltolower">
+  <view class="a">a</view>
+  <view class="b">b</view>
+  <view class="c">c</view>
+</scroll-view>
+
+<button bindtap="tapChange">切换</button>
+
+
+<!--基础内容-->
+<!--1、icon的类型，有效值属性
+type值：success, success_no_circle, info, warn, waiting, cancel, download, search, clear
+size： 	icon的大小，单位px
+color: 	icon的颜色，同css的color
+-->
+<icon type="success_no_circle" size="20" color="red"/>
+<view wx:for="{{iconType}}">
+    <icon type="{{item}}" size="40"/>
+</view>
+
+<!--2、text  里的文字可以选中，view里的文字不能选中-->
+<view>我是一段文字啦啦啦啦</view>
+<text>text里的文字啦啦啦啦</text>
+
+<!--3.进度条
+属性：
+percent:百分比0~100
+show-info：在进度条右侧显示百分比
+stroke-width:进度条线的宽度，单位px
+-->
+<progress  percent="20" show-info="true" stroke-width="20"/>

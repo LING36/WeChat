@@ -1,0 +1,53 @@
+.flex-wrap {
+  /*设置成弹性盒子模型*/
+  display: flex;
+}
+
+.flex-wrap view {
+  height: 200rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #fff; 
+}
+
+.a {
+  background-color: green;
+  flex: 1;
+}
+
+.b {
+  background-color: red;
+  flex: 1;
+}
+
+.c {
+  background-color: blue;
+  flex: 2;
+}
+.f2{
+    /*设置纵向排列  如果子盒子不设置高度，那么他会根据父级高度成比例*/
+   flex-direction: column; 
+}
+
+
+
+.wrap{
+    width: 400rpx;
+    height: 400rpx;
+    border: 1px solid red;
+    overflow: scroll;/*溢出出现滚动条*/
+}
+.wrap view{
+    width: 250rpx;
+    height: 250rpx;
+   
+}
+.wrap .a{
+    background-color: red;
+}
+.wrap .b{
+    background-color: green;
+}
+.wrap .c{
+    background-color: blue;
+}
