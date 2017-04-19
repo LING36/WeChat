@@ -1,0 +1,7 @@
+<!--要将page的宽高设置成百分百，才能让画布宽高百分百-->
+<!-- 因为 canvas-id 与前一个 canvas 重复，该 canvas 不会显示，并会发送一个错误事件到 AppService
+bindtouchstart 			手指触摸动作开始
+bindtouchmove 		手指触摸后移动
+bindtouchend 			手指触摸动作结束
+ -->
+<canvas  style="width:100%;height:100%;background-color:#f5f5f5;" canvas-id="oneCanvas" bindtouchstart="bindTouchStart" bindtouchmove="bindTouchMove" bindtouchend="bindTouchEnd"></canvas>
