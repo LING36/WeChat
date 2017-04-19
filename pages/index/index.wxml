@@ -1,0 +1,55 @@
+
+<!--index.wxml-->
+
+<!--view相当于div-->
+<view class="container">
+
+  <!--绑定的事件 bindtap="bindViewTap"-->
+  <view bindtap="bindViewTap" class="userinfo">
+
+    <!--image相当于img-->
+
+    <!--调用userInfo里的头像地址-->
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+
+    <!--{{}}类似angular里的双向数据绑定-->
+    <text class="userinfo-nickname">我的姓名是：{{userInfo.nickName}}</text>
+  </view>
+
+  <!--跳转 到操作反馈feedback  navigator  只能链接小程序内部的页面 接受相对路径-->
+
+  <!--传参：?id=12345-->
+  <navigator url="../feedback/feedback?id=12345&name=kkk" hover-class="nav_class">
+    <view>操作反馈 and 导航 ></view>
+  </navigator>
+  <button bindtap="navigataTo">跳转到操作反馈页面</button>
+
+  <!--跳转到地图-->
+  <navigator url="../map/map">
+    <view>地图></view>
+  </navigator>
+
+   <!--跳转到canvas-->
+  <navigator url="../canvas/canvas">
+    <view>跳转到canvas ></view>
+  </navigator>
+  
+   <!--跳转到小程序注册及服务器配置-->
+  <navigator url="../register/register">
+    <view>跳转到小程序注册及服务器配置 ></view>
+  </navigator>
+
+  <!--跳转到微信小程序之五星评价功能制作-->
+  <navigator url="../stars/stars">
+    <view>跳转到微信小程序之五星评价功能制作 ></view>
+  </navigator>
+  
+  <view class="usermotto">
+    <text class="user-motto">内容：{{motto}}</text>
+    <view class="rpx">
+    </view>
+
+    <!--添加点击事件-->
+    <button bindtap="changeMotto">点击</button>
+  </view>
+</view>

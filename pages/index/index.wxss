@@ -1,0 +1,41 @@
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  font-size: 20px;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+navigator{
+  border: 1rpx solid #ccc;
+  padding: 20rpx;
+}
+
+.nav_class{
+  color: red;
+}
+
+/*样式 单位rpx   css3的不一定支持  可将公共样式放在全局里  局部的可以覆盖公共的（就近原则）*/
+.rpx{
+  width: 400rpx;
+  height: 400rpx;
+  background-color: red;
+}
+/*样式引入 注意位置 如果不出现效果的话就放在最前面试试*/
+@import "common.wxss";

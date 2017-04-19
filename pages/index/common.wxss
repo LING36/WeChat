@@ -1,0 +1,3 @@
+.rpx{
+    border:5rpx solid #ccc;
+}
