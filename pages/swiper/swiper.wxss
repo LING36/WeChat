@@ -1,0 +1,12 @@
+.section_title{
+    background-color: #ccc;
+}
+.text{
+    border: 1px solid red;
+    color: green;
+    /*设置高度当内容多的时候默认出现滚动条*/
+    height: 100rpx;
+}
+.textarea_placeholder{
+    color: skyblue;
+}

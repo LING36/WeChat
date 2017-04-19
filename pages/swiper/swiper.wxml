@@ -1,0 +1,100 @@
+
+<!--滑动组件  
+属性：
+indicator-dots：是否显示面板指示点 接收布尔值  默认不显示
+indicator-color:指示点颜色   默认颜色：rgba(0, 0, 0, .3)
+autoplay:是否自动切换  默认5秒切换  interval:设置切换时间 毫秒
+duration:滑动动画时长
+current:当前所在页面的 index
+bindchange: current 改变时会触发 change 事件，event.detail = {current: current}
+<swiper></swiper>里只能放swiper-item 标签
+-->
+<!--轮播图-->
+<swiper indicator-dots="true" autoplay="true" interval="2000" duration="1000">
+  <swiper-item wx:for="{{imgUrls}}">
+
+    <!--把图片换成图片也可以滑动-->
+    <image src="{{item}}" width="355" height="150"></image>
+  </swiper-item>
+</swiper>
+
+<!--滑动选择器-->
+<!--show-value:是否显示当前取值
+step:步长  每次移动都是以步长为单位改变
+value:设置初始值-->
+<slider min="2000" max="5000" show-value  step="5" bindchange="bindSliderChange" value="3000"/>
+
+<!--开关选择器
+checked:是否选中
+type：控制样式  默认：switch
+-->
+<switch  checked="true" bindchange="bindSwitch"/>
+
+<!--多行文本输入框
+auto-height 默认为true:加上auto-height以后文本框的高度由内容撑开
+-->
+<textarea class="text" 
+placeholder="请输入留言" 
+placeholder-class="textarea_placeholder" auto-height bindlinechange="bindLineChange" />
+
+<!--表单组件
+button:默认宽度100%
+属性：
+size： 	有效值 default, mini：小号的
+type：按钮的样式类型，有效值 primary, default, warn
+plain：按钮是否镂空，背景色透明  接收布尔值
+disabled： 	是否禁用
+loading： 	名称前是否带 loading 图标,加载的图标
+form-type： 	有效值：submit, reset，用于 <form/> 组件，点击分别会触发 submit/reset 事件
+open-type： 	有效值：contact，打开客服会话
+hover-class：指定按钮按下去的样式类。当 hover-class="none" 时，没有点击态效果
+hover-start-time：按住后多久出现点击态，单位毫秒
+hover-stay-time：手指松开后点击态保留时间，单位毫秒
+bindsubmit:表单提交时触发该事件
+-->
+
+<!--<button bindtap="changeDisabled">启用按钮</button>-->
+<form bindsubmit="subFn" bindreset="resetFn">
+
+  <!--获取输入框里的值-->
+  <input type="text" name="txtName" />
+
+  <!--复选框-->
+  <checkbox-group bindchange="cheChange">
+    <label wx:for="{{country}}">
+      <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </checkbox-group>
+
+  <!--单选框-->
+  <radio-group bindchange="radioChange">
+    <label wx:for="{{country}}">
+      <checkbox value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+    </label>
+  </radio-group>
+  <!--picker:选择器 -->
+
+  <!--普通的-->
+  <view class="section_title">选择城市：</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{citys}}">
+    <view>当前选择：{{citys[index]}}</view>
+  </picker>
+
+  <!--时间选择器-->
+  <view class="section_title">选择时间：</view>
+  <picker value="{{time}}" start="09:01" end="21:01" mode="time" bindchange="bindTimeChange">
+    <view>当前选择：{{time}}</view>
+  </picker>
+
+  <!--日期选择器-->
+  <view class="section_title">选择日期：</view>
+  <picker mode="date" value="{{date}}" start="5015-11-01" end="2017-11-01" bindchange="bindDateChange">
+    <view>当前选择：{{date}}</view>
+  </picker>
+
+  <!--提交按钮-->
+  <button size="mini" type="primary" plain="true" loading="true" formType="submit">按钮</button>
+
+  <!--重置按钮-->
+  <button size="mini" form-type="reset">重置</button>
+</form>
