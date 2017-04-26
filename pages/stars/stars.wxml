@@ -2,8 +2,23 @@
 <!--pages/stars/stars.wxml-->
 
 <!--index.wxml-->
+<!--方法一-->
+<view class="classname">
 <block wx:for="{{stars}}">
   <image class="star-image" style="left: {{item*150}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
     <view class="item" style="left:50rpx" data-key="{{item+1}}" bindtap="selectRight"></view>
   </image>
 </block>
+</view>
+
+<!--方法二-->
+<view class="l-evalbox row">
+  <text class="l-evaltxt">满意度：</text>
+  <view class="l-evalist flex-1" bindtap="chooseicon">
+    <icon class="{{tabArr.curHdIndex >'0'? 'cur icon' : 'icon'}}" data-id="1"></icon>
+    <icon class="{{tabArr.curHdIndex >'1'? 'cur icon' : 'icon'}}" data-id="2"></icon>
+    <icon class="{{tabArr.curHdIndex >'2'? 'cur icon' : 'icon'}}" data-id="3"></icon>
+    <icon class="{{tabArr.curHdIndex >'3'? 'cur icon' : 'icon'}}" data-id="4"></icon>
+    <icon class="{{tabArr.curHdIndex >'4'? 'cur icon' : 'icon'}}" data-id="5"></icon>
+  </view>
+</view>

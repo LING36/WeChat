@@ -1,25 +1,57 @@
 /* pages/stars/stars.wxss */
+
+/*方法一*/
+
 .star-image {
-
- position: absolute;
-
- top: 50rpx;
-
- width: 150rpx;
-
- height: 150rpx;
-
- src: "../img/stars.png";
-
+  position: absolute;
+  top: 50rpx;
+  width: 150rpx;
+  height: 150rpx;
+  src: "../img/stars.png";
 }
+
 .item {
+  position: absolute;
+  top: 50rpx;
+  width: 75rpx;
+  height: 150rpx;
+}
 
- position: absolute;
+.classname {
+  border: 1rpx solid red;
+  overflow: hidden;
+}
 
- top: 50rpx;
+/*方法二*/
 
- width: 75rpx;
+.l-evalbox {
+  height: 100rpx;
+  padding: 0 3%;
+  margin-top: 200rpx;
+  background: #fff;
+  line-height: 100rpx;
+}
 
- height: 150rpx;
+.l-evaltxt {
+  width: 120rpx;
+  display: block;
+  font-size: 26rpx;
+  color: #666;
+}
 
+.l-evalist .icon {
+  background-image: url(../img/star.png);
+  background-position: -75rpx -235rpx;
+  width: 50rpx;
+  height: 45rpx;
+  margin-right: 30rpx;
+}
+
+.l-evalist .cur {
+  background-image: url(../img/star.png);
+  background-position: -122rpx -235rpx;
+}
+
+.l-evalist .icon:last-child {
+  margin: 0;
 }
