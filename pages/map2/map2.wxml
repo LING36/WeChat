@@ -1,0 +1,25 @@
+
+<!--pages/map2/map2.wxml-->
+<view class="wrapper">
+  <view class="page-body">
+    <view class="page-body-wrapper">
+      <form bindsubmit="openLocation">
+        <view class="page-body-form">
+          <text class="page-body-form-key">经度</text>
+          <input class="page-body-form-value" type="text" value="{{location.longitude}}" name="longitude" />
+          <text class="page-body-form-key">纬度</text>
+          <input class="page-body-form-value" type="text" value="{{location.latitude}}" name="latitude" />
+          <text class="page-body-form-key">位置名称</text>
+          <input class="page-body-form-value" type="text" value="广州市天河区华夏路49号" name="name" />
+          <text class="page-body-form-key">详细位置</text>
+          <input class="page-body-form-value" type="text" value="津滨腾越大厦北塔1808室" name="address" />
+        </view>
+        <view class="page-body-buttons">
+          <button class="page-body-button" type="primary" bindtap="getLocation">获取位置</button>
+          <button class="page-body-button" type="primary" form-type="submit">查看位置</button>
+        </view>
+      </form>
+    </view>
+  </view>
+  <view class="">链接：https://wenku.baidu.com/view/a15d69e7fc4ffe473268ab2a.html</view>
+</view>

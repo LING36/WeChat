@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/map2/map2",
     "pages/test/test",
     "pages/logs/logs",
     "pages/module/module",

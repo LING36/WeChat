@@ -28,6 +28,10 @@
   <navigator url="../map/map">
     <view>地图></view>
   </navigator>
+  <!--跳转到地图2-->
+  <navigator url="../map2/map2">
+    <view>跳转到地图2 ></view>
+  </navigator>
 
    <!--跳转到canvas-->
   <navigator url="../canvas/canvas">
