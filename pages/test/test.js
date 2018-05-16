@@ -1,5 +1,6 @@
 // 1、获取应用实例
 var app = getApp();
+var APT_URL = 'https://api.douban.com/v2/movie/top250';
 // 引入模块
 var common = require("../../common/common.js")
 Page({
@@ -8,20 +9,22 @@ Page({
         pass: null,
         id: 5,
         bol: false,
-        arr:['1','2','3'],
-        obj:{
-            a:1,
-            b:2
-        }
+        arr: ['1', '2', '3'],
+        obj: {
+            a: 1,
+            b: 2
+        },
+        dataArr: []
     },
+
     show: function () {
         //获取bol的值方法1
-        
+
         // var bol = this.data.bol;
         this.setData({
             // bol:!bol
             // 方法2
-            bol:!this.data.bol
+            bol: !this.data.bol
         });
     },
     say: function () {
@@ -38,17 +41,17 @@ Page({
             }
         });
     },
-    innerTap:function(){
+    innerTap: function () {
         console.log("触发了innertap")
     },
-     middle:function(){
+    middle: function () {
         console.log("触发了middle")
     },
-     outter:function(even){
-         console.log(even)
+    outter: function (even) {
+        console.log(even)
         console.log("触发了outter")
     },
-    newTap:function(){
+    newTap: function () {
         console.log("鼠标移动上去触发事件")
     },
     // 页面初始化
@@ -56,5 +59,23 @@ Page({
         this.setData({
             pass: app.globalData.pass
         });
-    }
+        wx.request({
+            url:"https://news-at.zhihu.com/api/4/news/latest",
+            data: {},
+            //   method: 'GET', 
+            header: {
+                "Content-Type": "json"
+            }, // 设置请求的 header
+            success: function (res) {
+                // success
+                console.log(res.data);
+                // var data = res.data;
+                // wx.hideToast();//当数据请求完成后隐藏提示窗口
+                // that.setData({
+                //     movies: data.subjects
+                // })
+            }
+        })
+    },
+
 });

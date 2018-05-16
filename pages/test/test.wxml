@@ -96,3 +96,4 @@
 
 <!--引入include  include可以将目标文件除了<template/>的整个代码引入，相当于是拷贝到include位置-->
 <include src="item.wxml"/>
+<view class="" wx:for="{{dataArr}}">{{item.name}}</view>

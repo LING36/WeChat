@@ -88,7 +88,7 @@ bindsubmit:表单提交时触发该事件
 
   <!--日期选择器-->
   <view class="section_title">选择日期：</view>
-  <picker mode="date" value="{{date}}" start="5015-11-01" end="2017-11-01" bindchange="bindDateChange">
+  <picker mode="date" value="{{date}}" start="1994-11-01" end="2027-11-01" bindchange="bindDateChange">
     <view>当前选择：{{date}}</view>
   </picker>
 

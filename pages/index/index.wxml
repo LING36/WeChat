@@ -28,17 +28,18 @@
   <navigator url="../map/map">
     <view>地图></view>
   </navigator>
+
   <!--跳转到地图2-->
   <navigator url="../map2/map2">
     <view>跳转到地图2 ></view>
   </navigator>
 
-   <!--跳转到canvas-->
+  <!--跳转到canvas-->
   <navigator url="../canvas/canvas">
     <view>跳转到canvas ></view>
   </navigator>
-  
-   <!--跳转到小程序注册及服务器配置-->
+
+  <!--跳转到小程序注册及服务器配置-->
   <navigator url="../register/register">
     <view>跳转到小程序注册及服务器配置 ></view>
   </navigator>
@@ -47,7 +48,6 @@
   <navigator url="../stars/stars">
     <view>跳转到微信小程序之五星评价功能制作 ></view>
   </navigator>
-  
   <view class="usermotto">
     <text class="user-motto">内容：{{motto}}</text>
     <view class="rpx">
@@ -55,5 +55,9 @@
 
     <!--添加点击事件-->
     <button bindtap="changeMotto">点击</button>
+    <form>
+      <input placeholder-class="ll" placeholder="如何改变input框的placeholder字体颜色" />
+      <textarea placeholder-class="ll" placeholder="啦啦啦啦" />
+    </form>
   </view>
 </view>

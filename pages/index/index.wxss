@@ -39,3 +39,7 @@ navigator{
 }
 /*样式引入 注意位置 如果不出现效果的话就放在最前面试试*/
 @import "common.wxss";
+
+.ll{
+  color: red;
+}
